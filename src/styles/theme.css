@@ -1,0 +1,394 @@
+/* src/styles/theme.css */
+
+/* ============================================
+   Theme Root
+   ============================================ */
+
+.theme-root {
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: #1f2937;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-root.dark-mode {
+  background-color: #0f172a;
+  color: #f1f5f9;
+}
+
+/* ============================================
+   Circle Expand Animation
+   ============================================ */
+
+/* .theme-circle-overlay {
+  position: fixed;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-circle-overlay.expanding {
+  width: 300vmax;
+  height: 300vmax;
+} */
+
+/* ============================================
+   Toggle Container - macOS Style
+   ============================================ */
+
+.theme-toggle-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 1000;
+}
+
+/* Selected Button - Glass Morphism */
+.theme-toggle-selected {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 0.625rem;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 0 0 1px rgba(0, 0, 0, 0.02);
+  color: #374151;
+}
+
+.theme-toggle-selected:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(0, 0, 0, 0.04);
+}
+
+.theme-toggle-selected:active {
+  transform: translateY(0);
+  box-shadow: 
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 0 0 1px rgba(0, 0, 0, 0.02);
+}
+
+/* Dark Mode */
+.theme-root.dark-mode .theme-toggle-selected {
+  background: rgba(30, 41, 59, 0.8);
+  border-color: rgba(255, 255, 255, 0.08);
+  color: #e2e8f0;
+  box-shadow: 
+    0 1px 2px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.theme-root.dark-mode .theme-toggle-selected:hover {
+  background: rgba(30, 41, 59, 0.95);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+/* ============================================
+   Options Panel - Floating Card
+   ============================================ */
+
+.theme-options-panel {
+  position: absolute;
+  top: 0;
+  display: flex;
+  gap: 0.375rem;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 0.75rem;
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(0, 0, 0, 0.02);
+  animation: slideIn 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 999;
+}
+
+.theme-root.dark-mode .theme-options-panel {
+  background: rgba(15, 23, 42, 0.9);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+/* Slide Animations */
+.theme-options-panel.slide-left {
+  right: 0;
+  animation-name: slideInFromLeft;
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+.theme-options-panel.slide-right {
+  left: 0;
+  animation-name: slideInFromRight;
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(-10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* Option Buttons */
+.theme-option-btn {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: #6b7280;
+}
+
+.theme-option-btn:hover:not(:disabled) {
+  background: rgba(0, 0, 0, 0.04);
+  color: #374151;
+  transform: scale(1.05);
+}
+
+.theme-option-btn.active {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  border-color: transparent;
+  cursor: default;
+  box-shadow: 
+    0 4px 12px rgba(99, 102, 241, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.theme-option-btn.active:hover {
+  transform: scale(1);
+}
+
+.theme-root.dark-mode .theme-option-btn {
+  color: #9ca3af;
+}
+
+.theme-root.dark-mode .theme-option-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.08);
+  color: #e5e7eb;
+}
+
+.theme-root.dark-mode .theme-option-btn.active {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  box-shadow: 
+    0 4px 12px rgba(99, 102, 241, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Icon Animation - Subtle */
+.theme-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-toggle-selected:hover .theme-icon {
+  transform: scale(1.1);
+}
+
+.theme-option-btn:hover:not(:disabled) .theme-icon {
+  transform: scale(1.1);
+}
+
+.theme-option-btn.active .theme-icon {
+  transform: scale(1);
+}
+
+/* ============================================
+   Dark Mode Auto Styles
+   ============================================ */
+
+.theme-root.dark-mode h1,
+.theme-root.dark-mode h2,
+.theme-root.dark-mode h3,
+.theme-root.dark-mode h4,
+.theme-root.dark-mode h5,
+.theme-root.dark-mode h6 {
+  color: #f8fafc;
+}
+
+.theme-root.dark-mode p {
+  color: #e2e8f0;
+}
+
+.theme-root.dark-mode a {
+  color: #60a5fa;
+}
+
+.theme-root.dark-mode a:hover {
+  color: #93c5fd;
+}
+
+.theme-root.dark-mode button:not([class*="theme-"]) {
+  background-color: #1e293b;
+  color: #f1f5f9;
+  border-color: #334155;
+}
+
+.theme-root.dark-mode button:not([class*="theme-"]):hover {
+  background-color: #334155;
+}
+
+.theme-root.dark-mode input,
+.theme-root.dark-mode textarea,
+.theme-root.dark-mode select {
+  background-color: #1e293b;
+  color: #f1f5f9;
+  border-color: #334155;
+}
+
+.theme-root.dark-mode input::placeholder,
+.theme-root.dark-mode textarea::placeholder {
+  color: #64748b;
+}
+
+.theme-root.dark-mode [class*="card"],
+.theme-root.dark-mode [class*="box"],
+.theme-root.dark-mode .border {
+  background-color: #1e293b;
+  border-color: #334155;
+}
+
+/* ============================================
+   OPT-OUT CLASSES (Ignore Theme) ✅
+   ============================================ */
+
+/* Method 1: Complete Opt-Out (Nuclear Option) */
+.no-theme,
+.no-theme * {
+  all: revert !important;
+}
+
+/* Method 2: Partial Opt-Out (Recommended) */
+.theme-root.dark-mode .theme-ignore,
+.theme-root.dark-mode .theme-ignore * {
+  color: initial !important;
+  background-color: initial !important;
+  border-color: initial !important;
+  box-shadow: initial !important;
+}
+
+/* Method 3: Force Light Mode */
+.theme-light,
+.theme-light * {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+.theme-root.dark-mode .theme-light,
+.theme-root.dark-mode .theme-light * {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border-color: #e5e7eb !important;
+}
+
+/* Method 4: Force Dark Mode */
+.theme-dark,
+.theme-dark * {
+  background-color: #0f172a !important;
+  color: #f1f5f9 !important;
+}
+
+.theme-root .theme-dark,
+.theme-root .theme-dark * {
+  background-color: #0f172a !important;
+  color: #f1f5f9 !important;
+  border-color: #334155 !important;
+}
+
+/* ============================================
+   UTILITY CLASSES (Manual Control) ✅
+   ============================================ */
+
+/* Custom Dark Backgrounds */
+.theme-root.dark-mode .dark-bg {
+  background-color: #000000 !important;
+}
+
+.theme-root.dark-mode .dark-bg-subtle {
+  background-color: #1e293b !important;
+}
+
+.theme-root.dark-mode .dark-bg-card {
+  background-color: #0f172a !important;
+  border: 1px solid #334155 !important;
+}
+
+/* Custom Dark Text */
+.theme-root.dark-mode .dark-text {
+  color: #ffffff !important;
+}
+
+.theme-root.dark-mode .dark-text-muted {
+  color: #94a3b8 !important;
+}
+
+/* Custom Dark Borders */
+.theme-root.dark-mode .dark-border {
+  border-color: #334155 !important;
+}
+
+/* Custom Dark Inputs */
+.theme-root.dark-mode .dark-input {
+  background-color: #1e293b !important;
+  color: #ffffff !important;
+  border-color: #334155 !important;
+}
+
+.theme-root.dark-mode .dark-input::placeholder {
+  color: #64748b !important;
+}
+
+/* Custom Dark Links */
+.theme-root.dark-mode .dark-link {
+  color: #60a5fa !important;
+}
+
+.theme-root.dark-mode .dark-link:hover {
+  color: #93c5fd !important;
+}

@@ -1,0 +1,54 @@
+{
+  "name": "@bhavi/react-theme-toggle",
+  "version": "1.0.0",
+  "description": "Zero-config dark mode toggle for React apps - Simple, lightweight, and customizable",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./styles": "./dist/styles/theme.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc && npm run copy-css",
+    "copy-css": "node -e \"const fs = require('fs'); const path = require('path'); const srcDir = path.join('dist', 'styles'); if (!fs.existsSync(srcDir)) fs.mkdirSync(srcDir, { recursive: true }); fs.copyFileSync('src/styles/theme.css', 'dist/styles/theme.css');\"",
+    "dev": "tsc --watch",
+    "dev:full": "npm run build && tsc --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "react",
+    "dark-mode",
+    "theme",
+    "toggle",
+    "dark-theme",
+    "light-mode",
+    "ui",
+    "component"
+  ],
+  "author": "Bhavi",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "typescript": "^5.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/react-theme-toggle"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/react-theme-toggle/issues"
+  }
+}
