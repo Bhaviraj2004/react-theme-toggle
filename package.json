@@ -14,14 +14,17 @@
     "./styles": "./dist/styles/theme.css"
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
     "build": "tsc && npm run copy-css",
     "copy-css": "node -e \"const fs = require('fs'); const path = require('path'); const srcDir = path.join('dist', 'styles'); if (!fs.existsSync(srcDir)) fs.mkdirSync(srcDir, { recursive: true }); fs.copyFileSync('src/styles/theme.css', 'dist/styles/theme.css');\"",
     "dev": "tsc --watch",
     "dev:full": "npm run build && tsc --watch",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "test": "echo \"No tests yet\" && exit 0"
   },
   "keywords": [
     "react",
@@ -31,7 +34,9 @@
     "dark-theme",
     "light-mode",
     "ui",
-    "component"
+    "component",
+    "theme-switcher",
+    "glassmorphism"
   ],
   "author": "Bhavi",
   "license": "MIT",
@@ -46,9 +51,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/react-theme-toggle"
+    "url": "https://github.com/Bhaviraj2004/react-theme-toggle"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/react-theme-toggle/issues"
-  }
+    "url": "https://github.com/Bhaviraj2004/react-theme-toggle/issues"
+  },
+  "homepage": "https://github.com/Bhaviraj2004/react-theme-toggle#readme"
 }
