@@ -1047,7 +1047,7 @@ We welcome contributions! To contribute:
 
 ```bash
 # Clone and setup
-git clone https://github.com/yourusername/react-theme-toggle
+git clone https://github.com/Bhaviraj2004/react-theme-toggle
 cd react-theme-toggle
 npm install
 
@@ -1080,8 +1080,8 @@ You are free to use this package in personal, educational, and commercial projec
 
 ## 📞 Support & Resources
 
-- **GitHub Issues:** [Report bugs and request features](https://github.com/yourusername/react-theme-toggle/issues)
-- **Discussions:** [Ask questions and share ideas](https://github.com/yourusername/react-theme-toggle/discussions)
+- **GitHub Issues:** [Report bugs and request features](https://github.com/Bhaviraj2004/react-theme-toggle/issues)
+- **Discussions:** [Ask questions and share ideas](https://github.com/Bhaviraj2004/react-theme-toggle/discussions)
 - **Documentation:** Complete API reference in this README
 - **Examples:** See the examples directory for more use cases
 
@@ -1089,6 +1089,6 @@ You are free to use this package in personal, educational, and commercial projec
 
 ## 🔗 Links
 
-- [GitHub Repository](https://github.com/yourusername/react-theme-toggle)
+- [GitHub Repository](https://github.com/Bhaviraj2004/react-theme-toggle)
 - [npm Package](https://www.npmjs.com/package/@bhavi/react-theme-toggle)
-- [Issues & Feedback](https://github.com/yourusername/react-theme-toggle/issues)
+- [Issues & Feedback](https://github.com/Bhaviraj2004/react-theme-toggle/issues)
