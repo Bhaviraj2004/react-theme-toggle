@@ -21,7 +21,6 @@ node_modules
 *.sln
 *.sw?
 
-src/
 node_modules/
 .git/
 .gitignore
