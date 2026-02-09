@@ -1,5 +1,5 @@
 {
-  "name": "@bhavi/react-theme-toggle",
+  "name": "react-theme-toggle-bhavi",
   "version": "1.0.0",
   "description": "Zero-config dark mode toggle for React apps - Simple, lightweight, and customizable",
   "main": "./dist/index.js",

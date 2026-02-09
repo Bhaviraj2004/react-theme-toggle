@@ -1,10 +1,10 @@
-# @bhavi/react-theme-toggle
+# react-theme-toggle-bhavi
 
 A production-ready React library for implementing dark mode toggle functionality with zero configuration required. Lightweight, fully typed, and extensively customizable.
 
 ## Overview
 
-`@bhavi/react-theme-toggle` provides an elegant solution for adding theme switching capabilities to React applications. It handles theme persistence, system preference detection, and provides a beautiful default UI component while remaining completely optional.
+`react-theme-toggle-bhavi` provides an elegant solution for adding theme switching capabilities to React applications. It handles theme persistence, system preference detection, and provides a beautiful default UI component while remaining completely optional.
 
 **Key Statistics:**
 
@@ -45,13 +45,13 @@ Install the package using your preferred package manager:
 
 ```bash
 # npm
-npm install @bhavi/react-theme-toggle
+npm install react-theme-toggle-bhavi
 
 # yarn
-yarn add @bhavi/react-theme-toggle
+yarn add react-theme-toggle-bhavi
 
 # pnpm
-pnpm add @bhavi/react-theme-toggle
+pnpm add react-theme-toggle-bhavi
 ```
 
 **That's it!** CSS is automatically imported when you use the `ThemeToggle` component.
@@ -66,7 +66,7 @@ Wrap your application with `ThemeProvider` and use the built-in `ThemeToggle` co
 
 ```jsx
 import React from "react";
-import { ThemeProvider, ThemeToggle } from "@bhavi/react-theme-toggle";
+import { ThemeProvider, ThemeToggle } from "react-theme-toggle-bhavi";
 
 export default function App() {
   return (
@@ -110,7 +110,7 @@ For complete control over the UI, use the `useTheme` hook to build your own togg
 
 ```jsx
 import React from "react";
-import { ThemeProvider, useTheme } from "@bhavi/react-theme-toggle";
+import { ThemeProvider, useTheme } from "react-theme-toggle-bhavi";
 
 export default function App() {
   return (
@@ -328,7 +328,7 @@ Pre-built toggle button component with animation and dropdown menu.
 **Example:**
 
 ```jsx
-import { ThemeToggle } from "@bhavi/react-theme-toggle";
+import { ThemeToggle } from "react-theme-toggle-bhavi";
 
 export function Header() {
   return (
@@ -366,7 +366,7 @@ interface ThemeContextType {
 **Example:**
 
 ```tsx
-import { useTheme } from "@bhavi/react-theme-toggle";
+import { useTheme } from "react-theme-toggle-bhavi";
 
 function ThemeSwitcher() {
   const { theme, mode, setMode } = useTheme();
@@ -404,11 +404,7 @@ A production-ready blog application with theme support:
 
 ```jsx
 import React from "react";
-import {
-  ThemeProvider,
-  ThemeToggle,
-  useTheme,
-} from "@bhavi/react-theme-toggle";
+import { ThemeProvider, ThemeToggle, useTheme } from "react-theme-toggle-bhavi";
 
 function BlogApp() {
   return (
@@ -510,7 +506,7 @@ An admin dashboard with per-user theme preferences:
 
 ```jsx
 import React, { useState } from "react";
-import { ThemeProvider, useTheme } from "@bhavi/react-theme-toggle";
+import { ThemeProvider, useTheme } from "react-theme-toggle-bhavi";
 
 function Dashboard() {
   return (
@@ -668,7 +664,7 @@ function NavItem({ href, children }) {
 A contact form that respects the current theme:
 
 ```jsx
-import { useTheme } from "@bhavi/react-theme-toggle";
+import { useTheme } from "react-theme-toggle-bhavi";
 
 function ContactForm() {
   const { theme } = useTheme();
@@ -889,8 +885,8 @@ Full TypeScript definitions are included. For type-safe implementations:
 
 ```tsx
 import React from "react";
-import type { ThemeMode, ThemeContextType } from "@bhavi/react-theme-toggle";
-import { ThemeProvider, useTheme } from "@bhavi/react-theme-toggle";
+import type { ThemeMode, ThemeContextType } from "react-theme-toggle-bhavi";
+import { ThemeProvider, useTheme } from "react-theme-toggle-bhavi";
 
 // Type-safe component
 interface AppProps {
@@ -981,7 +977,7 @@ Check browser console for localStorage warnings.
 
 ```jsx
 // Ensure CSS is imported
-import "@bhavi/react-theme-toggle/styles";
+import "react-theme-toggle-bhavi/styles";
 
 // Check that your classes use the correct names
 // ✅ Correct: .dark-text, .dark-bg, .dark-border
@@ -1090,5 +1086,5 @@ You are free to use this package in personal, educational, and commercial projec
 ## 🔗 Links
 
 - [GitHub Repository](https://github.com/Bhaviraj2004/react-theme-toggle)
-- [npm Package](https://www.npmjs.com/package/@bhavi/react-theme-toggle)
+- [npm Package](https://www.npmjs.com/package/react-theme-toggle-bhavi)
 - [Issues & Feedback](https://github.com/Bhaviraj2004/react-theme-toggle/issues)
